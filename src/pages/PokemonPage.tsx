@@ -13,7 +13,6 @@ export const PokemonPage = () => {
             </div>
         )
 
-
     if (!pokemon)
         return (
             <div className="bg-gradient flex flex-col items-center">
