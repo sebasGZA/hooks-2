@@ -31,7 +31,8 @@ export const usePokemon = ({ id }: Props) => {
     }, [id])
 
     return {
-        pokemon,
         isLoading,
+        pokemon,
+        formattedId: id.toString().padStart(3, '0'),
     }
 }
