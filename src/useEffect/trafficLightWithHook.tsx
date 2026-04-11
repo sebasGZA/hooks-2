@@ -1,42 +1,13 @@
-import { useEffect, useState } from "react";
+import { useTrafficLight } from "../hooks/useTrafficLight";
 
-import type { TrafficLightColor } from "../shared/types/color.type";
-import { colors } from "../shared/colors";
+export const TrafficLightWithHook = () => {
 
-
-export const TrafficLightWithEffect = () => {
-
-    const [light, setLight] = useState<TrafficLightColor>('red')
-    const [countDown, setCountDown] = useState<number>(5);
-
-    useEffect(() => {
-        if (countDown === 0) return;
-        const intervalId = setInterval(() => {
-            setCountDown(prev => prev - 1);
-        }, 1000);
-
-        return () => {
-            clearInterval(intervalId)
-        };
-    }, [countDown]);
-
-    useEffect(() => {
-        if (countDown === 0) {
-            setCountDown(5);
-            switch (light) {
-                case 'red':
-                    setLight('green');
-                    break;
-                case 'green':
-                    setLight('yellow');
-                    break;
-                default:
-                    setLight('red');
-                    break;
-            };
-            return;
-        };
-    }, [countDown, light])
+    const {
+        colors,
+        light,
+        countDown,
+        setLight
+    } = useTrafficLight('green', 5)
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 flex items-center justify-center p-4">
