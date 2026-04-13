@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
-import { FocusScreen } from './useRef/FocusScreen'
+// import { FocusScreen } from './useRef/FocusScreen'
 // import { PokemonPage } from './pages/PokemonPage'
 // import { TrafficLightWithHook } from './useEffect/trafficLightWithHook'
 // import { TrafficLightWithEffect } from './useEffect/TrafficLightWithEffect'
@@ -16,6 +16,6 @@ createRoot(document.getElementById('root')!).render(
     {/* <TrafficLightWithEffect /> */}
     {/* <TrafficLightWithHook /> */}
     {/* <PokemonPage /> */}
-    <FocusScreen />
+    {/* <FocusScreen /> */}
   </StrictMode>,
 )
