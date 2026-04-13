@@ -11,12 +11,16 @@ const getCompletedTodos = (todos: Todo[]) => {
 }
 
 export const getTaskInitialState = (): TaskState => {
-    return {
-        todos: [],
-        completed: 0,
-        pending: 0,
-        length: 0
-    };
+    const todosLocalStorage = localStorage.getItem('task-state');
+    if (!todosLocalStorage)
+        return {
+            todos: [],
+            completed: 0,
+            pending: 0,
+            length: 0
+        };
+
+    return JSON.parse(todosLocalStorage)
 };
 
 export const taskReducer = (
