@@ -2,10 +2,15 @@ import { useState } from 'react';
 
 import { Plus, Trash2, Check } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Checkbox } from '../components/ui/checkbox';
+import { 
+  Card, 
+  CardContent, 
+  CardHeader, 
+  CardTitle
+} from '../components/ui/card';
 
 interface Todo {
   id: number;
