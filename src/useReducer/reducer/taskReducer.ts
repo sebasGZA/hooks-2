@@ -1,4 +1,6 @@
-import type { TaskState } from "../interfaces/task-todo.interface";
+import * as z from 'zod/v4';
+
+import { taskStateSchema, type TaskState } from "../interfaces/task-todo.interface";
 import type { Todo } from "../interfaces/todo.interface";
 import type { TaskAction } from "../types/action.type";
 
@@ -12,6 +14,7 @@ const getCompletedTodos = (todos: Todo[]) => {
 
 export const getTaskInitialState = (): TaskState => {
     const todosLocalStorage = localStorage.getItem('task-state');
+
     if (!todosLocalStorage)
         return {
             todos: [],
@@ -20,7 +23,21 @@ export const getTaskInitialState = (): TaskState => {
             length: 0
         };
 
-    return JSON.parse(todosLocalStorage)
+    const tasksState = JSON.parse(todosLocalStorage);
+    const result = taskStateSchema.safeParse(
+        tasksState
+    );
+    if (result.error) {
+        console.error(result.error.message);
+        return {
+            todos: [],
+            completed: 0,
+            pending: 0,
+            length: 0
+        };
+    }
+
+    return tasksState;
 };
 
 export const taskReducer = (
