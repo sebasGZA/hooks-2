@@ -1,8 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { MemoHook } from './useMemo/MemoHook'
 import './index.css'
-import { ScrambleWords } from './useReducer/ScrambleWords'
 
+// import { ScrambleWords } from './useReducer/ScrambleWords'
 // import { TasksApp } from './useReducer/TaskApp'
 // import { FocusScreen } from './useRef/FocusScreen'
 // import { PokemonPage } from './pages/PokemonPage'
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')!).render(
     {/* <PokemonPage /> */}
     {/* <FocusScreen /> */}
     {/* <TasksApp /> */}
-    <ScrambleWords />
+    {/* <ScrambleWords /> */}
+    <MemoHook />
   </StrictMode>,
 )
