@@ -1,11 +1,16 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { MyTitle } from "./ui/MyTitle"
 import { MySubtitle } from "./ui/MySubtitle";
+
+
 
 export const MemoHook = () => {
 
     const [title, setTitle] = useState('World');
     const [subtitle, setSubtitle] = useState('Hello');
+    const handleMyAPICall = useCallback(() => {
+        console.log('call my API', subtitle)
+    }, [subtitle])
 
     return (
         <div className="bg-gradient flex flex-col gap-4">
@@ -15,7 +20,10 @@ export const MemoHook = () => {
 
             <MyTitle title={title} />
 
-            <MySubtitle subtitle={subtitle} />
+            <MySubtitle
+                subtitle={subtitle}
+                callMyAPI={handleMyAPICall}
+            />
 
             <button
                 onClick={() => setTitle('hello')}
