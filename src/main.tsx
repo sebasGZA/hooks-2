@@ -1,8 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { MemoHook } from './useMemo/MemoHook'
 import './index.css'
+import { MemoCounter } from './memo/MemoCounter'
 
+// import { MemoHook } from './memo/MemoHook'
 // import { ScrambleWords } from './useReducer/ScrambleWords'
 // import { TasksApp } from './useReducer/TaskApp'
 // import { FocusScreen } from './useRef/FocusScreen'
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
     {/* <FocusScreen /> */}
     {/* <TasksApp /> */}
     {/* <ScrambleWords /> */}
-    <MemoHook />
+    {/* <MemoHook /> */}
+    <MemoCounter />
   </StrictMode>,
 )
