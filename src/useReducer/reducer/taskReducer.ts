@@ -1,7 +1,5 @@
-import * as z from 'zod/v4';
-
-import { taskStateSchema, type TaskState } from "../interfaces/task-todo.interface";
-import type { Todo } from "../interfaces/todo.interface";
+import { taskStateSchema, type TaskState } from "../../interfaces/task-todo.interface";
+import type { Todo } from "../../interfaces/todo.interface";
 import type { TaskAction } from "../types/action.type";
 
 const getPendingTodos = (todos: Todo[]) => {
