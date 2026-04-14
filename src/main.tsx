@@ -1,8 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Toaster } from 'sonner'
 import './index.css'
-import { MemoCounter } from './memo/MemoCounter'
+import { InstagromApp } from './useOptimistic/instagromApp'
 
+// import { MemoCounter } from './memo/MemoCounter'
 // import { MemoHook } from './memo/MemoHook'
 // import { ScrambleWords } from './useReducer/ScrambleWords'
 // import { TasksApp } from './useReducer/TaskApp'
@@ -15,6 +17,7 @@ import { MemoCounter } from './memo/MemoCounter'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <Toaster richColors />
     {/* <HooksApp /> */}
     {/* <TrafficLight /> */}
     {/* <TrafficLightWithEffect /> */}
@@ -24,6 +27,7 @@ createRoot(document.getElementById('root')!).render(
     {/* <TasksApp /> */}
     {/* <ScrambleWords /> */}
     {/* <MemoHook /> */}
-    <MemoCounter />
+    {/* <MemoCounter /> */}
+    <InstagromApp />
   </StrictMode>,
 )
