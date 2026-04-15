@@ -1,9 +1,10 @@
+import React, { useContext, useState } from "react"
 import { Link, useNavigate } from "react-router"
+import { toast } from "sonner"
+
 import { Button } from "../../../components/ui/button"
 import { Input } from "../../../components/ui/input"
-import React, { useContext, useState } from "react"
 import { UserContext } from "../../context/UserContext"
-import { toast } from "sonner"
 
 export const LoginPage = () => {
   const { login } = useContext(UserContext);
