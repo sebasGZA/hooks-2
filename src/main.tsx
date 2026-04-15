@@ -3,8 +3,9 @@ import { createRoot } from 'react-dom/client'
 import { Toaster } from 'sonner'
 import './index.css'
 
-import { ClientInformation } from './use-suspense/ClientInformation'
-import { getUserAction } from './use-suspense/api/get-user.action'
+import { ProfessionalApp } from './useContext/ProfessionalApp'
+// import { ClientInformation } from './use-suspense/ClientInformation'
+// import { getUserAction } from './use-suspense/api/get-user.action'
 // import { InstagromApp } from './useOptimistic/instagromApp'
 // import { MemoCounter } from './memo/MemoCounter'
 // import { MemoHook } from './memo/MemoHook'
@@ -31,13 +32,14 @@ createRoot(document.getElementById('root')!).render(
     {/* <MemoHook /> */}
     {/* <MemoCounter /> */}
     {/* <InstagromApp /> */}
-    <Suspense
+    {/* <Suspense
       fallback={
         <div className='bg-gradient flex flex-col'>
           <h1>Loading...</h1>
         </div>
       }>
       <ClientInformation getUser={getUserAction(1)} />
-    </Suspense>
+    </Suspense> */}
+    <ProfessionalApp />
   </StrictMode>,
 )
